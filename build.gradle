@@ -14,6 +14,9 @@ repositories {
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    // https://mvnrepository.com/artifact/com.github.vldrus/cachedrowset-wrapper
+    implementation group: 'com.github.vldrus', name: 'cachedrowset-wrapper', version: '1.0.2'
+
 
 }
 

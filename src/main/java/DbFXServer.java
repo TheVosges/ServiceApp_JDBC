@@ -111,6 +111,8 @@ public class DbFXServer {
         assert tableViewDataAdmin != null : "fx:id=\"tableViewDataAdmin\" was not injected: check your FXML file 'dbFXServer.fxml'.";
         assert tfIdUpdate != null : "fx:id=\"tfIdUpdate\" was not injected: check your FXML file 'dbFXServer.fxml'.";
 
+
+
     }
 
 }

@@ -14,6 +14,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class DbFXClient {
+    private String clientID;
 
     @FXML
     private ResourceBundle resources;
