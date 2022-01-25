@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -11,41 +13,39 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Text?>
 
-
-<?import javafx.scene.control.TextField?>
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DbFXClient">
    <children>
-      <VBox prefHeight="400.0" prefWidth="164.0">
+      <VBox prefHeight="400.0" prefWidth="190.0">
          <children>
-            <ImageView fitHeight="368.0" fitWidth="190.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="327.0" fitWidth="190.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../graphics/1.png" />
                </image>
             </ImageView>
-            <HBox alignment="CENTER" prefHeight="73.0" prefWidth="170.0">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="btnLogOut" mnemonicParsing="false" onAction="#LogOutClicked" prefHeight="19.0" prefWidth="58.0" text="Log out" />
+                  <Button fx:id="btnLogOut" mnemonicParsing="false" onAction="#LogOutClicked" text="Log out" />
                </children>
             </HBox>
          </children>
       </VBox>
-      <TableView fx:id="table" layoutX="210.0" layoutY="236.0" prefHeight="150.0" prefWidth="376.0">
+      <TableView fx:id="tableView" layoutX="205.0" layoutY="215.0" prefHeight="170.0" prefWidth="374.0">
         <columns>
           <TableColumn prefWidth="75.0" text="ID" />
-          <TableColumn prefWidth="75.0" text="Device" />
+          <TableColumn prefWidth="75.0" text="Device name" />
             <TableColumn prefWidth="75.0" text="Serial no." />
             <TableColumn prefWidth="75.0" text="Price" />
             <TableColumn prefWidth="75.0" text="Status" />
         </columns>
       </TableView>
-      <Text layoutX="313.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="My reclamations" />
-      <Button fx:id="btnShowAll" layoutX="420.0" layoutY="200.0" mnemonicParsing="false" onAction="#ShowAllClicked" text="Show all" />
-      <Text layoutX="341.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add new reclamation" />
-      <TextField fx:id="tfClientID" layoutX="210.0" layoutY="66.0" promptText="client id" />
-      <TextField fx:id="tfDeviceName" layoutX="378.0" layoutY="66.0" promptText="device name" />
-      <TextField fx:id="tfSerialNo" layoutX="210.0" layoutY="100.0" promptText="serial no." />
-      <Button fx:id="btnAddRecl" layoutX="547.0" layoutY="100.0" mnemonicParsing="false" text="Add" />
-      <Line endX="300.0" layoutX="300.0" layoutY="171.0" startX="-109.60002136230469" />
-      <DatePicker fx:id="tfBoughtDate" layoutX="378.0" layoutY="100.0" prefHeight="26.0" prefWidth="150.0" promptText="bought date" />
+      <Button fx:id="btnShowAll" layoutX="403.0" layoutY="175.0" mnemonicParsing="false" onAction="#ShowAllCliked" text="Show all" />
+      <Text layoutX="331.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add new reclamation" />
+      <Text layoutX="300.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="My reclamations" />
+      <Line endX="309.0" layoutX="287.0" layoutY="155.0" startX="-100.0" />
+      <TextField fx:id="tfClientID" layoutX="205.0" layoutY="59.0" promptText="client id" />
+      <TextField fx:id="tfDeviceName" layoutX="368.0" layoutY="59.0" promptText="device name" />
+      <Button fx:id="btnAdd" layoutX="540.0" layoutY="98.0" mnemonicParsing="false" onAction="#AddCliked" text="Add" />
+      <TextField fx:id="tfSerialNo" layoutX="205.0" layoutY="98.0" promptText="serial no." />
+      <DatePicker fx:id="dpBoughtDate" layoutX="368.0" layoutY="98.0" prefHeight="26.0" prefWidth="150.0" promptText="bought date" />
    </children>
 </AnchorPane>

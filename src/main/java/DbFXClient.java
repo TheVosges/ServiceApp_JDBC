@@ -1,11 +1,17 @@
+
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class DbFXClient {
 
@@ -16,7 +22,7 @@ public class DbFXClient {
     private URL location;
 
     @FXML
-    private Button btnAddRecl;
+    private Button btnAdd;
 
     @FXML
     private Button btnLogOut;
@@ -25,10 +31,10 @@ public class DbFXClient {
     private Button btnShowAll;
 
     @FXML
-    private TableView<?> table;
+    private DatePicker dpBoughtDate;
 
     @FXML
-    private DatePicker tfBoughtDate;
+    private TableView<?> tableView;
 
     @FXML
     private TextField tfClientID;
@@ -40,22 +46,34 @@ public class DbFXClient {
     private TextField tfSerialNo;
 
     @FXML
-    void LogOutClicked(ActionEvent event) {
+    void AddCliked(ActionEvent event) {
 
     }
 
+    public void transferMessage(String message) {
+        //Display the message
+        this.clientID = message;
+        tfClientID.setText(clientID);
+    }
+
     @FXML
-    void ShowAllClicked(ActionEvent event) {
+    void LogOutClicked(ActionEvent event) throws IOException {
+        Stage stage = (Stage) btnLogOut.getScene().getWindow();
+        stage.close();
+    }
+
+    @FXML
+    void ShowAllCliked(ActionEvent event) {
 
     }
 
     @FXML
     void initialize() {
-        assert btnAddRecl != null : "fx:id=\"btnAddRecl\" was not injected: check your FXML file 'dbFXClient.fxml'.";
+        assert btnAdd != null : "fx:id=\"btnAdd\" was not injected: check your FXML file 'dbFXClient.fxml'.";
         assert btnLogOut != null : "fx:id=\"btnLogOut\" was not injected: check your FXML file 'dbFXClient.fxml'.";
         assert btnShowAll != null : "fx:id=\"btnShowAll\" was not injected: check your FXML file 'dbFXClient.fxml'.";
-        assert table != null : "fx:id=\"table\" was not injected: check your FXML file 'dbFXClient.fxml'.";
-        assert tfBoughtDate != null : "fx:id=\"tfBoughtDate\" was not injected: check your FXML file 'dbFXClient.fxml'.";
+        assert dpBoughtDate != null : "fx:id=\"dpBoughtDate\" was not injected: check your FXML file 'dbFXClient.fxml'.";
+        assert tableView != null : "fx:id=\"tableView\" was not injected: check your FXML file 'dbFXClient.fxml'.";
         assert tfClientID != null : "fx:id=\"tfClientID\" was not injected: check your FXML file 'dbFXClient.fxml'.";
         assert tfDeviceName != null : "fx:id=\"tfDeviceName\" was not injected: check your FXML file 'dbFXClient.fxml'.";
         assert tfSerialNo != null : "fx:id=\"tfSerialNo\" was not injected: check your FXML file 'dbFXClient.fxml'.";

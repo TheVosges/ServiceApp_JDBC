@@ -15,8 +15,8 @@
       <Text layoutX="20.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter username:" />
       <TextField fx:id="edtUser" layoutX="16.0" layoutY="70.0" />
       <Text layoutX="20.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter password:" />
-      <Button fx:id="btnServiceUser" layoutX="17.0" layoutY="185.0" mnemonicParsing="false" text="LOGIN AS SERVICE USER" textAlignment="CENTER" />
-      <Button fx:id="btnClient" layoutX="38.0" layoutY="343.0" mnemonicParsing="false" text="LOGIN AS CLIENT" textAlignment="CENTER" wrapText="true">
+      <Button fx:id="btnServiceUser" layoutX="17.0" layoutY="185.0" mnemonicParsing="false" onAction="#LoginService" text="LOGIN AS SERVICE USER" textAlignment="CENTER" />
+      <Button fx:id="btnClient" layoutX="38.0" layoutY="343.0" mnemonicParsing="false" onAction="#LoginClient" text="LOGIN AS CLIENT" textAlignment="CENTER" wrapText="true">
          <cursor>
             <Cursor fx:constant="DEFAULT" />
          </cursor>
@@ -29,6 +29,6 @@
       </ImageView>
       <Line endX="92.0" layoutX="99.0" layoutY="241.0" startX="-100.0" />
       <Text layoutX="20.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter client ID:" wrappingWidth="164.0" />
-      <TextField layoutX="47.0" layoutY="296.0" onAction="#edtClientID" prefHeight="18.0" prefWidth="97.0" />
+      <TextField fx:id="edtClient" layoutX="47.0" layoutY="296.0" onAction="#edtClientID" prefHeight="18.0" prefWidth="97.0" />
    </children>
 </AnchorPane>

@@ -1,3 +1,4 @@
+import java.awt.event.ActionEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -8,6 +9,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 
 public class DbFXServer {
 
@@ -67,6 +69,27 @@ public class DbFXServer {
 
     @FXML
     private TextField tfIdUpdate;
+
+    @FXML
+    void LogoutClicked(ActionEvent event) {
+        Stage stage = (Stage) btnLogOutAdmin.getScene().getWindow();
+        stage.close();
+    }
+
+    @FXML
+    void ShowDataClicked(ActionEvent event) {
+
+    }
+
+    @FXML
+    void ShowStatusClicked(ActionEvent event) {
+
+    }
+
+    @FXML
+    void UpdateClicked(ActionEvent event) {
+
+    }
 
     @FXML
     void initialize() {
