@@ -1,6 +1,14 @@
 import java.awt.event.ActionEvent;
+
 import java.net.URL;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+
+import ib.AdminDAO;
+import ib.DBUtil;
+import ib.Reclamation;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
@@ -12,6 +20,7 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 public class DbFXServer {
+    public DBUtil dbAccess;
 
     @FXML
     private ResourceBundle resources;
@@ -111,9 +120,47 @@ public class DbFXServer {
         assert tableViewDataAdmin != null : "fx:id=\"tableViewDataAdmin\" was not injected: check your FXML file 'dbFXServer.fxml'.";
         assert tfIdUpdate != null : "fx:id=\"tfIdUpdate\" was not injected: check your FXML file 'dbFXServer.fxml'.";
 
+        dbAccess = new DBUtil("root", "Magicalnature2");
+        DBUtil dbAccess = new DBUtil("root", "Magicalnature2");
+        try {
+            dbAccess.dbConnect();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 
+    public void LogoutClicked(javafx.event.ActionEvent actionEvent) {
+        Stage stage = (Stage) btnLogOutAdmin.getScene().getWindow();
+        stage.close();
+    }
+    private AdminDAO adminDAO;
+
+    public void ShowDataClicked(javafx.event.ActionEvent actionEvent) {
+
+        try {
+
+            tableViewDataAdmin.getItems().clear();
+            ObservableList<> reclamationsData = adminDAO.showAllReclamations();
+            populateTable(reclamationsData);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
 
     }
 
+    private void populateTable(ObservableList<Reclamation> reclamationsData) {
+        tableViewDataAdmin.setItems(reclamationsData);
+    }
+
+    public void ShowStatusClicked(javafx.event.ActionEvent actionEvent) {
+    }
+
+    public void UpdateClicked(javafx.event.ActionEvent actionEvent) {
+    }
 }
 

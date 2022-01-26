@@ -16,6 +16,8 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
     // https://mvnrepository.com/artifact/com.github.vldrus/cachedrowset-wrapper
     implementation group: 'com.github.vldrus', name: 'cachedrowset-wrapper', version: '1.0.2'
+    // https://mvnrepository.com/artifact/mysql/mysql-connector-java
+    implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.27'
 
 
 }

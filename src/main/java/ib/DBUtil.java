@@ -1,5 +1,5 @@
 package ib;
-//import com.github.vldrus.sql.rowset.CachedRowSetWrapper;
+import com.github.vldrus.sql.rowset.CachedRowSetWrapper;
 import javafx.scene.control.TextArea;
 
 import javax.sql.rowset.CachedRowSet;
@@ -12,20 +12,11 @@ public class DBUtil {
     private String userPassword;
     private String clientID;
 
-    private TextArea consoleTextArea;
-
     private Connection conn = null;
 
     public DBUtil(String userName, String userPassword) {
-        if (userName == "admin"){
-            this.userName = "root";
-        }
-        else this.userName = userName;
-
-        if (userPassword == "admin"){
-            this.userPassword = "Magicalnature2";
-        }
-        else this.userPassword = userPassword;
+         this.userName = userName;
+        this.userPassword = userPassword;
     }
 
     public DBUtil(String clientID) {
@@ -71,7 +62,7 @@ public class DBUtil {
 
         StringBuilder urlSB = new StringBuilder("jdbc:mysql://");
         urlSB.append("localhost:3306/");
-        urlSB.append("tennis_players?");
+        urlSB.append("service?");
         urlSB.append("useUnicode=true&characterEncoding=utf-8");
         urlSB.append("&user=");
         urlSB.append(userName);
@@ -100,7 +91,7 @@ public class DBUtil {
 
             crs.populate(resultSet);
         } catch (SQLException e) {
-            consoleTextArea.appendText("Problem occurred at executeQuery operation. \n");
+//            consoleTextArea.appendText("Problem occurred at executeQuery operation. \n");
             throw e;
         } finally {
             if (resultSet != null) {
@@ -124,7 +115,7 @@ public class DBUtil {
             stmt.executeUpdate(sqlStmt);
 
         } catch (SQLException e) {
-            consoleTextArea.appendText("Problem occurred at executeUpdate operation. \n");
+//            consoleTextArea.appendText("Problem occurred at executeUpdate operation. \n");
             throw e;
         } finally {
             if (stmt != null) {
