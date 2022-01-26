@@ -80,28 +80,7 @@ public class DbFXServer {
     private TextField tfIdUpdate;
 
     @FXML
-    void LogoutClicked(ActionEvent event) {
-        Stage stage = (Stage) btnLogOutAdmin.getScene().getWindow();
-        stage.close();
-    }
-
-    @FXML
-    void ShowDataClicked(ActionEvent event) {
-
-    }
-
-    @FXML
-    void ShowStatusClicked(ActionEvent event) {
-
-    }
-
-    @FXML
-    void UpdateClicked(ActionEvent event) {
-
-    }
-
-    @FXML
-    void initialize() {
+    void initialize() throws SQLException, ClassNotFoundException {
         assert btnFilter != null : "fx:id=\"btnFilter\" was not injected: check your FXML file 'dbFXServer.fxml'.";
         assert btnLogOutAdmin != null : "fx:id=\"btnLogOutAdmin\" was not injected: check your FXML file 'dbFXServer.fxml'.";
         assert btnShowStats != null : "fx:id=\"btnShowStats\" was not injected: check your FXML file 'dbFXServer.fxml'.";

@@ -25,18 +25,18 @@ public class DBUtil {
 
     public void dbConnect() throws SQLException, ClassNotFoundException {
 
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-        } catch (ClassNotFoundException e) {
-            consoleTextArea.appendText("No MySQL JDBC Driver found." + "\n");
-            e.printStackTrace();
-            throw e;
-        }
+//        try {
+//            Class.forName("com.mysql.cj.jdbc.Driver");
+//        } catch (ClassNotFoundException e) {
+////            consoleTextArea.appendText("No MySQL JDBC Driver found." + "\n");
+//            e.printStackTrace();
+//            throw e;
+//        }
 
         try {
             conn = DriverManager.getConnection(createURL());
         } catch (SQLException e) {
-            consoleTextArea.appendText("Connection Failed! Try again." + "\n");
+//            consoleTextArea.appendText("Connection Failed! Try again." + "\n");
             e.printStackTrace();
             throw e;
         }
@@ -50,7 +50,7 @@ public class DBUtil {
             if (conn != null && !conn.isClosed()) {
 
                 conn.close();
-                consoleTextArea.appendText("Connection closed. Bye!" + "\n");
+//                consoleTextArea.appendText("Connection closed. Bye!" + "\n");
 
             }
         } catch (Exception e) {

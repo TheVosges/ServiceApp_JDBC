@@ -67,8 +67,8 @@ public class DbFX {
         String password = edtPassword.getText().toString();
         if (login.equals(employee.getLogin()) && password.equals(employee.getPassword())) {
             Stage secondStage = new Stage();
-            Parent root = FXMLLoader.load(getClass().getResource("/fxml/dbFXClient.fxml"));
-            Scene scene = new Scene(root, 492, 399);
+            Parent root = FXMLLoader.load(getClass().getResource("/fxml/dbFXServer.fxml"));
+            Scene scene = new Scene(root, 600, 400);
             secondStage.setScene(scene);
             secondStage.show();
         }

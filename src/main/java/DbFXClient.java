@@ -1,7 +1,10 @@
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+
+import ib.DBUtil;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,7 +17,9 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class DbFXClient {
+
     private String clientID;
+    public DBUtil dbAccess;
 
     @FXML
     private ResourceBundle resources;
@@ -78,6 +83,16 @@ public class DbFXClient {
         assert tfClientID != null : "fx:id=\"tfClientID\" was not injected: check your FXML file 'dbFXClient.fxml'.";
         assert tfDeviceName != null : "fx:id=\"tfDeviceName\" was not injected: check your FXML file 'dbFXClient.fxml'.";
         assert tfSerialNo != null : "fx:id=\"tfSerialNo\" was not injected: check your FXML file 'dbFXClient.fxml'.";
+
+        dbAccess = new DBUtil("root", "Magicalnature2");
+        DBUtil dbAccess = new DBUtil("root", "Magicalnature2");
+        try {
+            dbAccess.dbConnect();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
 
     }
 
